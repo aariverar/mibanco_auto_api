@@ -1,14 +1,15 @@
 Feature: API Testing from Excel
 
-Scenario Outline: Generic API Test
-  Given the API endpoint is read from the Excel file
-  And the headers are read from the Excel file
-  When I send a "<Request Type>" request to the endpoint
-  Then the response status code should be read from the Excel file
-  And the response should contain the expected content from the Excel file
+  @test1
+  Scenario Outline: Api Test
+    Given se lee el endpoint y lo headers del excel "<datos>"
+    When cuando envio un request al endpoint "<datos>"
+    Then se valida el estado del response con el esperado del excel "<datos>"
+    And the response should contain the expected content from the Excel file
 
-  Examples:
-    | Request Type |
-    | GET          |
-    | POST         |
-    | PUT          |
+    Examples:
+      | datos |
+      |     1 |
+      |     2 |
+      |     3 |
+      |     4 |

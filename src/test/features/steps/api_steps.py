@@ -1,34 +1,79 @@
 import requests
 from behave import given, when, then
+from src.test.library.excel_reader import data
+import json
 
-@given('the API endpoint is read from the Excel file')
-def step_given_api_endpoint(context):
-    print(f"Endpoint: {context.endpoint}")
+def get_data():
+        return data("test_data.xlsx","Hoja1")
 
-@given('the headers are read from the Excel file')
-def step_given_headers(context):
-    print(f"Headers: {context.headers}")
+@given('se lee el endpoint y lo headers del excel "{datos}"')
+def step_given_api_endpoint(context,datos):
+    context.ejecutar =get_data()[int(datos)-1]["Ejecucion"]
+    if context.ejecutar=="SI":
+        context.endpoint = get_data()[int(datos)-1]["Endpoint"]
+        if get_data()[int(datos)-1]["Headers"]:
+            context.headers = dict([header.split(': ') for header in (get_data()[int(datos)-1]["Headers"]).split('\n')])
+        else:
+            context.headers=''
+        context.request_type = get_data()[int(datos)-1]["Request Type"]
+        context.expected_status_code = get_data()[int(datos)-1]["Expected Status Code"]
+        context.expected_content = get_data()[int(datos)-1]["Expected Content"]
+        print("[LOG] Se extrae del excel los datos")
 
-@when('I send a "{request_type}" request to the endpoint')
-def step_when_send_request(context, request_type):
-    context.request_type = request_type
-    if request_type == 'GET':
-        context.response = requests.get(context.endpoint, headers=context.headers)
-    elif request_type == 'POST':
-        context.response = requests.post(context.endpoint, headers=context.headers)
-    elif request_type == 'PUT':
-        context.response = requests.put(context.endpoint, headers=context.headers)
-    else:
-        raise ValueError(f"Unsupported request type: {request_type}")
+@when('cuando envio un request al endpoint "{datos}"')
+def step_when_send_request(context, datos):
+    try:
+        if context.ejecutar=="SI":
+            print("[LOG] Se envia la peticion")
+            if context.request_type == 'GET':
+                
+                context.response = requests.get(context.endpoint, headers=context.headers)
+            elif context.request_type == 'POST':
 
-@then('the response status code should be read from the Excel file')
-def step_then_response_status_code(context):
-    print(f"Expected Status Code: {context.expected_status_code}")
-    print(f"Actual Status Code: {context.response.status_code}")
-    assert context.response.status_code == context.expected_status_code
+                if get_data()[int(datos)-1]["Body"]:
+                    context.body = json.loads(get_data()[int(datos)-1]["Body"])
+                    context.response = requests.post(context.endpoint, headers=context.headers,json=context.body)
+                else:
+                    print("VACIO")
+                    context.body = ''
+                    context.response = requests.post(context.endpoint, headers=context.headers)
+                
 
+            elif context.request_type == 'PUT':
+                context.response = requests.put(context.endpoint, headers=context.headers)
+            else:
+                raise ValueError(f"Unsupported request type: {context.request_type}")
+            print(f"Response: {context.response.json()}")
+    except Exception as e:
+            print("[LOG] Error realizar la peticion:",e)
+            raise AssertionError("[LOG] Error al validar el contenido del response")
+
+
+@then('se valida el estado del response con el esperado del excel "{datos}"')
+def step_then_response_status_code(context,datos):
+    try:
+        if context.ejecutar=="SI":
+            print("[LOG] Se valida el status Code")
+            print(f"Expected Status Code: {context.expected_status_code}")
+            print(f"Actual Status Code: {context.response.status_code}")
+            assert str(context.response.status_code) == str(context.expected_status_code)
+        else:
+            context.state="NO-EXECUTED"
+    except Exception as e:
+            print("[LOG] Error al validar el estado del response")
+            raise AssertionError("[LOG] Error al validar el estado del response")
+    
 @then('the response should contain the expected content from the Excel file')
 def step_then_response_contains_expected_content(context):
-    print(f"Expected Content: {context.expected_content}")
-    print(f"Actual Content: {context.response.text}")
-    assert context.expected_content in context.response.text
+    try:
+        if context.ejecutar=="SI":
+            print("[LOG] Se valida el contenido del response")
+            print(f"Expected Content: {context.expected_content}")
+            print(f"Actual Content: {context.response.text}")
+            assert context.expected_content in context.response.text
+            print("[LOG] Se realizo la validación del contenido correctamente!")
+        else:
+            context.state="NO-EXECUTED"
+    except Exception as e:
+            print("[LOG] Error al validar el contenido del response")
+            raise AssertionError("[LOG] Error al validar el contenido del response")
