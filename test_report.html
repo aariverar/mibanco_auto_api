@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scenario {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .passed {
+            background-color: #cfc;
+        }
+        .failed {
+            background-color: #fcc;
+        }
+        .step {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bootstrap JavaScript (opcional, si necesitas componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <h1>Test Report</h1>
+    
+    <h2>API Testing from Excel</h2>
+    
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header ">
+                <button class="accordion-button collapsed alert alert-success" role="alert" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                    Api Test -- @1.1 
+                </button>
+            </h2>
+        </div>
+        <div id="flush-collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <ul>
+                    
+                        <li class="step">se lee el endpoint y lo headers del excel "1" (passed)</li>
+                        <li class="step">Se extrae: 
+Endpoint: https://reqres.in/api/login</li>
+                    
+                        <li class="step">cuando envio un request al endpoint "1" (passed)</li>
+                        <li class="step">Response: {'token': 'QpwL5tke4Pnpja7X4'}</li>
+                    
+                        <li class="step">se valida el estado del response con el esperado del excel "1" (passed)</li>
+                        <li class="step">[LOG] Se valida el status Code
+Expected Status Code: 200
+Actual Status Code: 200
+</li>
+                    
+                        <li class="step">the response should contain the expected content from the Excel file "1" (passed)</li>
+                        <li class="step">[LOG] Se valida el contenido del response
+Expected Content: token
+Actual Content: {"token":"QpwL5tke4Pnpja7X4"}
+</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header ">
+                <button class="accordion-button collapsed alert alert-secondary" role="alert" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse2" aria-expanded="false" aria-controls="flush-collapse2">
+                    Api Test -- @1.2 
+                </button>
+            </h2>
+        </div>
+        <div id="flush-collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <ul>
+                    
+                        <li class="step">se lee el endpoint y lo headers del excel "2" (passed)</li>
+                        <li class="step">NO-EXECUTED</li>
+                    
+                        <li class="step">cuando envio un request al endpoint "2" (passed)</li>
+                        <li class="step">NO-EXECUTED</li>
+                    
+                        <li class="step">se valida el estado del response con el esperado del excel "2" (passed)</li>
+                        <li class="step">NO-EXECUTED</li>
+                    
+                        <li class="step">the response should contain the expected content from the Excel file "2" (passed)</li>
+                        <li class="step">NO-EXECUTED</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>

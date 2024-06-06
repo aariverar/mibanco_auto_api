@@ -21,7 +21,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"1\"",
           "result": {
-            "duration": 0.043909311294555664,
+            "duration": 0.04571342468261719,
             "status": "passed"
           },
           "step_type": "given"
@@ -36,11 +36,11 @@
                 "value": "1"
               }
             ],
-            "location": "src/test/features/steps/api_steps.py:23"
+            "location": "src/test/features/steps/api_steps.py:25"
           },
           "name": "cuando envio un request al endpoint \"1\"",
           "result": {
-            "duration": 0.6011784076690674,
+            "duration": 0.8727395534515381,
             "status": "passed"
           },
           "step_type": "when"
@@ -55,11 +55,11 @@
                 "value": "1"
               }
             ],
-            "location": "src/test/features/steps/api_steps.py:52"
+            "location": "src/test/features/steps/api_steps.py:59"
           },
           "name": "se valida el estado del response con el esperado del excel \"1\"",
           "result": {
-            "duration": 0.001020669937133789,
+            "duration": 0.0010113716125488281,
             "status": "passed"
           },
           "step_type": "then"
@@ -68,12 +68,17 @@
           "keyword": "And",
           "location": "src/test/features/api_test.feature:8",
           "match": {
-            "arguments": [],
-            "location": "src/test/features/steps/api_steps.py:66"
+            "arguments": [
+              {
+                "name": "datos",
+                "value": "1"
+              }
+            ],
+            "location": "src/test/features/steps/api_steps.py:81"
           },
-          "name": "the response should contain the expected content from the Excel file",
+          "name": "the response should contain the expected content from the Excel file \"1\"",
           "result": {
-            "duration": 0.0009961128234863281,
+            "duration": 0.0,
             "status": "passed"
           },
           "step_type": "then"
@@ -88,7 +93,7 @@
       "keyword": "Scenario Outline",
       "location": "src/test/features/api_test.feature:13",
       "name": "Api Test -- @1.2 ",
-      "status": "failed",
+      "status": "skipped",
       "steps": [
         {
           "keyword": "Given",
@@ -104,7 +109,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"2\"",
           "result": {
-            "duration": 0.04388236999511719,
+            "duration": 0.008974552154541016,
             "status": "passed"
           },
           "step_type": "given"
@@ -119,11 +124,11 @@
                 "value": "2"
               }
             ],
-            "location": "src/test/features/steps/api_steps.py:23"
+            "location": "src/test/features/steps/api_steps.py:25"
           },
           "name": "cuando envio un request al endpoint \"2\"",
           "result": {
-            "duration": 0.5845284461975098,
+            "duration": 0.0009696483612060547,
             "status": "passed"
           },
           "step_type": "when"
@@ -138,11 +143,11 @@
                 "value": "2"
               }
             ],
-            "location": "src/test/features/steps/api_steps.py:52"
+            "location": "src/test/features/steps/api_steps.py:59"
           },
           "name": "se valida el estado del response con el esperado del excel \"2\"",
           "result": {
-            "duration": 0.0009982585906982422,
+            "duration": 0.000997781753540039,
             "status": "passed"
           },
           "step_type": "then"
@@ -151,179 +156,17 @@
           "keyword": "And",
           "location": "src/test/features/api_test.feature:8",
           "match": {
-            "arguments": [],
-            "location": "src/test/features/steps/api_steps.py:66"
-          },
-          "name": "the response should contain the expected content from the Excel file",
-          "result": {
-            "duration": 0.0009980201721191406,
-            "error_message": "Assertion Failed: [LOG] Error al validar el contenido del response",
-            "status": "failed"
-          },
-          "step_type": "then"
-        }
-      ],
-      "tags": [
-        "test1"
-      ],
-      "type": "scenario"
-    },
-    {
-      "keyword": "Scenario Outline",
-      "location": "src/test/features/api_test.feature:14",
-      "name": "Api Test -- @1.3 ",
-      "status": "skipped",
-      "steps": [
-        {
-          "keyword": "Given",
-          "location": "src/test/features/api_test.feature:5",
-          "match": {
             "arguments": [
               {
                 "name": "datos",
-                "value": "3"
+                "value": "2"
               }
             ],
-            "location": "src/test/features/steps/api_steps.py:9"
+            "location": "src/test/features/steps/api_steps.py:81"
           },
-          "name": "se lee el endpoint y lo headers del excel \"3\"",
+          "name": "the response should contain the expected content from the Excel file \"2\"",
           "result": {
-            "duration": 0.009003400802612305,
-            "status": "passed"
-          },
-          "step_type": "given"
-        },
-        {
-          "keyword": "When",
-          "location": "src/test/features/api_test.feature:6",
-          "match": {
-            "arguments": [
-              {
-                "name": "datos",
-                "value": "3"
-              }
-            ],
-            "location": "src/test/features/steps/api_steps.py:23"
-          },
-          "name": "cuando envio un request al endpoint \"3\"",
-          "result": {
-            "duration": 0.0,
-            "status": "passed"
-          },
-          "step_type": "when"
-        },
-        {
-          "keyword": "Then",
-          "location": "src/test/features/api_test.feature:7",
-          "match": {
-            "arguments": [
-              {
-                "name": "datos",
-                "value": "3"
-              }
-            ],
-            "location": "src/test/features/steps/api_steps.py:52"
-          },
-          "name": "se valida el estado del response con el esperado del excel \"3\"",
-          "result": {
-            "duration": 0.0009694099426269531,
-            "status": "passed"
-          },
-          "step_type": "then"
-        },
-        {
-          "keyword": "And",
-          "location": "src/test/features/api_test.feature:8",
-          "match": {
-            "arguments": [],
-            "location": "src/test/features/steps/api_steps.py:66"
-          },
-          "name": "the response should contain the expected content from the Excel file",
-          "result": {
-            "duration": 0.0,
-            "status": "passed"
-          },
-          "step_type": "then"
-        }
-      ],
-      "tags": [
-        "test1"
-      ],
-      "type": "scenario"
-    },
-    {
-      "keyword": "Scenario Outline",
-      "location": "src/test/features/api_test.feature:15",
-      "name": "Api Test -- @1.4 ",
-      "status": "skipped",
-      "steps": [
-        {
-          "keyword": "Given",
-          "location": "src/test/features/api_test.feature:5",
-          "match": {
-            "arguments": [
-              {
-                "name": "datos",
-                "value": "4"
-              }
-            ],
-            "location": "src/test/features/steps/api_steps.py:9"
-          },
-          "name": "se lee el endpoint y lo headers del excel \"4\"",
-          "result": {
-            "duration": 0.007978439331054688,
-            "status": "passed"
-          },
-          "step_type": "given"
-        },
-        {
-          "keyword": "When",
-          "location": "src/test/features/api_test.feature:6",
-          "match": {
-            "arguments": [
-              {
-                "name": "datos",
-                "value": "4"
-              }
-            ],
-            "location": "src/test/features/steps/api_steps.py:23"
-          },
-          "name": "cuando envio un request al endpoint \"4\"",
-          "result": {
-            "duration": 0.0009968280792236328,
-            "status": "passed"
-          },
-          "step_type": "when"
-        },
-        {
-          "keyword": "Then",
-          "location": "src/test/features/api_test.feature:7",
-          "match": {
-            "arguments": [
-              {
-                "name": "datos",
-                "value": "4"
-              }
-            ],
-            "location": "src/test/features/steps/api_steps.py:52"
-          },
-          "name": "se valida el estado del response con el esperado del excel \"4\"",
-          "result": {
-            "duration": 0.0,
-            "status": "passed"
-          },
-          "step_type": "then"
-        },
-        {
-          "keyword": "And",
-          "location": "src/test/features/api_test.feature:8",
-          "match": {
-            "arguments": [],
-            "location": "src/test/features/steps/api_steps.py:66"
-          },
-          "name": "the response should contain the expected content from the Excel file",
-          "result": {
-            "duration": 0.0009980201721191406,
+            "duration": 0.0010249614715576172,
             "status": "passed"
           },
           "step_type": "then"
@@ -338,7 +181,7 @@
   "keyword": "Feature",
   "location": "src/test/features/api_test.feature:1",
   "name": "API Testing from Excel",
-  "status": "failed",
+  "status": "passed",
   "tags": []
 }
 ]
