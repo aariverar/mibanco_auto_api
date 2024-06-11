@@ -18,7 +18,7 @@ def step_given_api_endpoint(context,datos):
             context.headers=''
         context.request_type = get_data()[int(datos)-1]["Request Type"]
         context.expected_status_code = get_data()[int(datos)-1]["Expected Status Code"]
-        context.expected_content = get_data()[int(datos)-1]["Expected Content"]
+        context.expected_content = get_data()[int(datos)-1]["Expected Content_1"]
         context.custom_message = f"Se extrae: \nEndpoint: {context.endpoint}"
         print("[LOG] Se extrae del excel los datos")
 
@@ -38,7 +38,6 @@ def step_when_send_request(context, datos):
                     context.body = json.loads(get_data()[int(datos)-1]["Body"])
                     context.response = requests.post(context.endpoint, headers=context.headers,json=context.body)
                 else:
-                    print("VACIO")
                     context.body = ''
                     context.response = requests.post(context.endpoint, headers=context.headers)
                 
@@ -47,8 +46,19 @@ def step_when_send_request(context, datos):
                 context.response = requests.put(context.endpoint, headers=context.headers)
             else:
                 raise ValueError(f"Unsupported request type: {context.request_type}")
-            print(f"Response: {context.response.json()}")
-            context.custom_message = f"Response: {context.response.json()}"
+            log_messages = "<strong>REQUEST:</strong>\n"
+            log_messages += f"{context.request_type} {context.endpoint}\n"
+            #log_messages += f"Request Headers: {context.response.request.headers}\n"
+            log_messages += f"Request Headers: {pretty_print_headers(context.response.request.headers)}\n"
+            if get_data()[int(datos)-1]["Body"]:
+                    log_messages += f"Body: {pretty_print_headers(context.body)}"
+            log_messages += "\n\n<strong>RESPONSE:</strong>\n"
+            log_messages += f"{context.response.request.method} - Code: {context.response.status_code} {context.response.reason}\n"
+            log_messages += f"Headers: {pretty_print_headers(context.response.headers)}\n"
+            #log_messages += f"Headers: {context.response.headers}\n"
+            log_messages += f"Elapsed Time: {context.response.elapsed}\n"
+            log_messages += f"{pretty_print_headers(context.response.json())}\n"
+            context.custom_message = log_messages
             
     except Exception as e:
             print("[LOG] Error realizar la peticion:",e)
@@ -78,21 +88,44 @@ def step_then_response_status_code(context,datos):
             context.custom_message =f"Error al validar el estado del response:{e}"
             raise AssertionError("[LOG] Error al validar el estado del response")
     
-@then('the response should contain the expected content from the Excel file "{datos}"')
+@then('el response debe contener el contenido esperado del excel "{datos}"')
 def step_then_response_contains_expected_content(context,datos):
     try:
         context.custom_message ="HOLA"
         if context.ejecutar=="SI":
+            validacion=" "
             print("[LOG] Se valida el contenido del response")
-            print(f"Expected Content: {context.expected_content}")
-            print(f"Actual Content: {context.response.text}")
             log_messages = ""
-            log_messages += "[LOG] Se valida el contenido del response\n"
-            log_messages += f"Expected Content: {context.expected_content}\n"
-            log_messages += f"Actual Content: {context.response.text}\n"
-            assert context.expected_content in context.response.text
+            log_messages += "\n[LOG] Se valida el contenido del response\n\n"
+            for i in range(1, 7, 1):
+                vString=f"Expected Content_{i}"
+                print(vString)
+                if get_data()[int(datos)-1][vString]:
+                    context.expected_content= get_data()[int(datos)-1][vString]
+                    print(f"Expected Content: {context.expected_content}")
+                    print(f"Actual Content: {pretty_print_headers(context.response.json())}")  
+                    log_messages += f"Expected Content {i}: {context.expected_content}\n"
+                    log_messages += f"Actual Content {i}: {pretty_print_headers(context.response.json())}\n"
+                    #print(f"Actual Status Code: {context.response.text}")
+                    if context.expected_content in pretty_print_headers(context.response.json()):
+                        log_messages+="PASSED\n\n"
+                        validacion+="PASSED "
+                    else:
+                        log_messages+="FAILED\n\n"
+                        validacion+="FAILED "
+                else:
+                    break    
             
-            print("[LOG] Se realizo la validación del contenido correctamente!")
+            if validacion != " ":
+                 print(validacion)
+                 assert "FAILED" not in validacion
+                 print("[LOG] Se realizo la validación del contenido correctamente!")
+            else:
+                 log_messages="No hay validaciones"
+            
+           # assert context.expected_content in context.response.text
+            
+            
             context.custom_message = log_messages
         else:
             context.state="NO-EXECUTED"
@@ -101,3 +134,16 @@ def step_then_response_contains_expected_content(context,datos):
             context.custom_message =f"Error al validar el contenido del response:{log_messages}{e}"
             print("[LOG] Error al validar el contenido del response")
             raise AssertionError("[LOG] Error al validar el contenido del response")
+
+
+
+def convert_headers_to_dict(headers):
+    return {key: value for key, value in headers.items()}
+
+# Función para mostrar los encabezados en formato pretty
+def pretty_print_headers(headers):
+    # Convertir a un diccionario estándar si es un CaseInsensitiveDict
+    if isinstance(headers, requests.structures.CaseInsensitiveDict):
+        headers = convert_headers_to_dict(headers)
+    pretty_headers = json.dumps(headers, indent=4)
+    return pretty_headers

@@ -4,25 +4,23 @@ import pandas as pd
 import json
 import os
 from src.test.library.utils import modify_json_with_message
+from src.test.library.reporte_html import generate_html_report
+from datetime import datetime
 
 def before_all(context):
-    """
-    Hook to execute before all tests.
-    Use this to set up global context attributes, configurations, etc.
-    """
     context.step_messages = []
+    context.start_time=datetime.now()
+    
+    # Formatear la fecha y hora según el formato especificado
+    formato = "%d %b %Y, %H:%M"
+    context.fecha_formateada = context.start_time.strftime(formato)
+    
 
 def after_all(context):
-    """
-    Hook to execute after all tests.
-    Use this to clean up any resources initialized in before_all.
-    """
-    print(context.step_messages)
     rutaJson= os.getcwd()+"\\json.pretty.output"
     with open(rutaJson, "a") as json_file:
         json_file.write("]") 
     
-    print(rutaJson)
     with open(rutaJson, 'r') as file:
         data = json.load(file)
     # Modificar los nombres de los steps en el JSON
@@ -31,8 +29,19 @@ def after_all(context):
     rutaJson2= os.getcwd()+"\\Nuevo.pretty.output"
     with open(rutaJson2, 'w') as file:
         json.dump(modified_data, file, indent=4)
-    print("PAUSA")
+
+    rutaJson= os.getcwd()+"\\Nuevo.pretty.output"
+
+# Load the test results JSON
+    with open(rutaJson, 'r') as file:
+        test_results = json.load(file)
+
     
+    # Generate the HTML report
+    rutareporte=os.getcwd()+"\\src\\test\\reports\\test_report2.html"
+    context.timer=datetime.now()-context.start_time
+    context.fecha_formateada+=f" - Duracion: {context.timer.total_seconds()}s"
+    generate_html_report(test_results, rutareporte,context.fecha_formateada)
 
 def before_feature(context, feature):
     """
@@ -48,6 +57,7 @@ def after_feature(context, feature):
 
 def before_scenario(context, scenario):
     context.state=None
+    
 
 def after_scenario(context, scenario):
     if context.state is not None:
