@@ -1,0 +1,149 @@
+.body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #101010;
+}
+
+.content-page{
+    margin-top: 100px;
+}
+.lead-duration {
+    float: right;
+    padding-right: 15px;
+}
+
+.collapsable-control {
+    cursor: pointer;
+}
+
+.collapsed .chevron:after {
+    content: "\f054";
+}
+.keyword {
+    font-weight: bold;
+}
+.indention {
+    padding-left: 3px;
+}
+.lead-duration {
+    float: right;
+    padding-right: 15px;
+}
+.description, .comment {
+    font-style: italic;
+    background-color: beige;
+    white-space: pre;
+}
+.inner-level {
+    margin-top: 5px;
+    margin-left: 20px;
+    padding-bottom: 2px;
+    padding-left: 1px;
+}
+
+#feature-report{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    justify-content: center;
+}
+
+#table-project{
+margin: 20px;
+}
+
+#table-report-status{
+    width: 70% !important;
+}
+
+.bg-passed{
+    /* background-color: #22CFCF !important; */
+    background-color:  rgba(75, 192, 192, 0.2) !important ;
+
+}
+
+.bg-failed{
+   /* background-color: #FF4069 !important; */
+   background-color: rgba(255, 99, 132, 0.2) !important ;
+
+}
+
+.bg-skipped{
+    /* background-color: #FFCD56 !important; */
+    background-color: rgba(255, 206, 86, 0.2) !important ;
+}
+
+.chart-canvas-style{
+    max-width: 30%;
+    width: 300px;
+    height: 300px;
+}
+
+.scenario-box{
+    margin: 30px;
+    box-shadow: -1px 0 lightgray;
+    transition: box-shadow 0.3s;
+}
+
+.steps-box{
+    margin-top:20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.step{
+    margin-left: 20px;
+}
+/* 
+.scenario-passed{
+    background-color: #22CFCF !important;
+}
+.scenario-failed{
+    background-color: #FF4069 !important;
+}
+.scenario-skipped{
+    background-color: #FFCD56 !important;
+} */
+
+.scenario-passed{
+    /* background-color: #22CFCF !important; */
+    background-color:  rgba(75, 192, 192, 1) !important ;
+
+}
+
+.scenario-failed{
+   /* background-color: #FF4069 !important; */
+   background-color: rgba(255, 99, 132, 1) !important ;
+
+}
+
+.scenario-skipped{
+    /* background-color: #FFCD56 !important; */
+    background-color: rgba(255, 206, 86, 1) !important ;
+}
+
+.step-passed{
+    background-color: rgba(75, 192, 192, 1)!important;
+}
+
+.scenario-failed{
+    background-color:rgba(255, 99, 132, 1) !important;
+}
+.scenario-skipped{
+    background-color: rgba(255, 206, 86, 1) !important;
+}
+
+.table-and-chart{
+    margin-bottom: 30px;
+}
+
+.title-and-logo{
+    margin-bottom: 30px;
+}

@@ -4,7 +4,7 @@ import pandas as pd
 import json
 import os
 from src.test.library.utils import modify_json_with_message
-from src.test.library.reporte_html import generate_html_report
+from src.test.library.report_html import generate_html_report
 from datetime import datetime
 
 def before_all(context):
@@ -38,7 +38,7 @@ def after_all(context):
 
     
     # Generate the HTML report
-    rutareporte=os.getcwd()+"\\src\\test\\reports\\test_report2.html"
+    rutareporte=os.getcwd()+"\\src\\test\\resources\\template\\report_final.html"
     context.timer=datetime.now()-context.start_time
     context.fecha_formateada+=f" - Duracion: {context.timer.total_seconds()}s"
     generate_html_report(test_results, rutareporte,context.fecha_formateada)
