@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark text-light bg-dark fixed-top" id="navigation">
+        <div class="container-fluid">
+            <p class="navbar-text navbar-left">Reporte de Automatización - Mi Banco</p>
+            <div id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-link-navbar" href="overview-features-final.html">Features</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container content-page">
+        <div class="element">
+            <div class="d-flex flex-row justify-content-around title-and-logo">
+                <div id="logo-mibanco">
+                    <img src="logo_mibanco.png" alt="Logo" height="90">
+                </div>
+                <div id="table-project" class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Proyecto</th>
+                                <th scope="col">Fecha del reporte</th>                       
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td>Framework Auto Api</th>
+                                <td>18 Jun 2024, 13:21</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="element">
+            <div id="features-statistics-report">
+                <div class="d-flex flex-row justify-content-around">
+                    <div>
+                        <h2>Features Statistics</h2>
+                        <div class="summary-widgets-features d-flex flex-row">
+                            <div>
+                                <div class="features-count d-flex flex-col">2</div>
+                                <div class="subtitles-text">Features</div>
+                            </div>
+                            <div>
+                                <div class="scenarios-count d-flex flex-col">9</div>
+                                <div class="subtitles-text">Scenarios</div>
+                            </div>
+                            <div>
+                                <div class="steps-count d-flex flex-col">36</div>
+                                <div class="subtitles-text">Steps</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-canvas-style justify-content-center d-flex flex-row align-items-center">
+                        <canvas class="chart-scenarios"
+                                data-passed="5"
+                                data-failed="3"
+                                data-skipped="1">
+                        </canvas>
+                    </div>
+                </div>
+                <div class="justify-content-center d-flex flex-row justify-content-around align-items-center table-and-chart">
+                    <div id="table-report-status" class="col align-items-center">
+                        <table class = "table table-bordered align-items-center text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" colspan="4">Scenarios</th>
+                                    <th scope="col" colspan="4">Steps</th>                       
+                                </tr>
+                            </thead>  
+                            <tbody>
+                                <tr>
+                                    <td>Features</td>
+                                    <td class="text-dark fw-bold bg-passed">Passed</td>
+                                    <td class="text-dark fw-bold bg-failed">Failed</td>
+                                    <td class="text-dark fw-bold bg-skipped">Skipped</td>
+                                    <td>Total</td>
+                                    <td class="text-dark fw-bold bg-passed">Passed</td>
+                                    <td class="text-dark fw-bold bg-failed">Failed</td>
+                                    <td class="text-dark fw-bold bg-skipped">Skipped</td>
+                                    <td>Total</td>
+                                </tr>
+                                 <!--Por cada feature-->
+                                
+                                    <tr>
+                                        <td><a href="report-feature-1.html">API Testing prueba 2</a> </td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>4</td>
+                                        <td>14</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>16</td>
+                                    </tr>
+                                 <!--Por cada feature-->
+                                
+                                    <tr>
+                                        <td><a href="report-feature-2.html">API Testing from Excel</a> </td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>19</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>20</td>
+                                    </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>           
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container text-end">
+            <span class="text-muted">Reporte HTML generado por Mi Banco.</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

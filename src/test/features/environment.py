@@ -1,11 +1,8 @@
-# features/environment.py
-import time
-import pandas as pd
 import json
 import os
-from src.test.library.utils import modify_json_with_message
-from src.test.library.report_html import generate_html_report
 from datetime import datetime
+from src.test.library.utils import *
+from src.test.library.variables import *
 
 def before_all(context):
     context.step_messages = []
@@ -17,31 +14,30 @@ def before_all(context):
     
 
 def after_all(context):
-    rutaJson= os.getcwd()+"\\json.pretty.output"
-    with open(rutaJson, "a") as json_file:
+    data_json_path= os.getcwd()+"\\json.pretty.output"
+
+    with open(data_json_path, "a") as json_file:
         json_file.write("]") 
     
-    with open(rutaJson, 'r') as file:
+    with open(data_json_path, 'r') as file:
         data = json.load(file)
+
     # Modificar los nombres de los steps en el JSON
     modified_data = modify_json_with_message(data, context.step_messages)
+
     # Sobrescribir el archivo JSON con los cambios
-    rutaJson2= os.getcwd()+"\\Nuevo.pretty.output"
-    with open(rutaJson2, 'w') as file:
+    data_json_path = os.getcwd()+"\\New.pretty.output"
+
+    with open(data_json_path, 'w') as file:
         json.dump(modified_data, file, indent=4)
 
-    rutaJson= os.getcwd()+"\\Nuevo.pretty.output"
-
-# Load the test results JSON
-    with open(rutaJson, 'r') as file:
-        test_results = json.load(file)
-
-    
     # Generate the HTML report
-    rutareporte=os.getcwd()+"\\src\\test\\resources\\template\\report_final.html"
-    context.timer=datetime.now()-context.start_time
-    context.fecha_formateada+=f" - Duracion: {context.timer.total_seconds()}s"
-    generate_html_report(test_results, rutareporte,context.fecha_formateada)
+    data = process_data_json(data_json_path)
+    total_scenarios, total_steps, scenarios_information= count_total_scenarios_and_steps(data)
+    report_folder = create_report_folder(template_folder_path, report_folder_path)
+
+    generate_html_for_all_features(html_features_plantilla, report_folder, data, total_scenarios, total_steps, scenarios_information)
+    generate_html_for_each_feature(html_for_each_feature_plantilla,report_folder, data)
 
 def before_feature(context, feature):
     """
