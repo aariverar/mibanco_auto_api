@@ -5,9 +5,9 @@ from datetime import datetime
 from jinja2 import Template
 from functools import wraps
 
-def generate_html_for_all_features(plantilla, output_path, data, scenarios, steps, scenarios_information):
+def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information):
 
-    with open(plantilla, 'r') as file:
+    with open(template, 'r') as file:
         template_content = file.read()
     template = Template(template_content)
 
@@ -31,9 +31,9 @@ def generate_html_for_all_features(plantilla, output_path, data, scenarios, step
     with open(output_path, 'w') as file:
         file.write(html_output)
 
-def generate_html_for_each_feature(plantilla, output_path, data):
+def generate_html_for_each_feature(template, output_path, data):
 
-    with open(plantilla, 'r') as file:
+    with open(template, 'r') as file:
         template_content = file.read()
     template = Template(template_content)
 
