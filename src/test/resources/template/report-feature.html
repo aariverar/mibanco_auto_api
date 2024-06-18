@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test Report</title>
+    <title id="title-report">Mi Banco Report</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +16,7 @@
             <div id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-link-navbar" href="overview-features.html">Features</a>
+                        <a id ="navbar-features-link" class="nav-link text-link-navbar" href="overview-features.html">Features</a>
                     </li>
                 </ul>
             </div>
@@ -31,13 +32,13 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">Proyecto</th>
+                                <th scope="col">Equipo</th>
                                 <th scope="col">Fecha del reporte</th>                       
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
                             <tr>
-                                <td>Framework Auto Api</th>
+                                <td>Automatización Mi Banco</th>
                                 <td>{{date}}</th>
                             </tr>
                         </tbody>
@@ -120,40 +121,40 @@
                 {% for scenario in feature.scenarios %}
                     {% set scenario_index = loop.index %}
                     <div class="card">
-                        <div id="scenario-{{scenario_index}}"data-bs-toggle="collapse" class="collapsable-control card-body d-flex flex-row justify-content-between collapsed bg-{{scenario.status}} scenario-card" data-bs-target="#element-{{feature_index}}-{{scenario_index}}" aria-expanded="false" aria-controls="element-{{feature_index}}{{scenario_index}}">
+                        <div id="scenario-box-{{feature_index}}-{{scenario_index}}"data-bs-toggle="collapse" class="collapsable-control card-body d-flex flex-row justify-content-between collapsed bg-{{scenario.status}} scenario-card" data-bs-target="#element-{{feature_index}}-{{scenario_index}}" aria-expanded="false" aria-controls="element-{{feature_index}}{{scenario_index}}">
                             <div>
-                                <span class="keyword indention">Scenario</span>
-                                <span class="name">{{scenario.name}}</span>
-                                <i class="fa fa-chevron-right fa-fw"></i>
+                                <span id="scenario-subtitle-text-{{feature_index}}-{{scenario_index}}" class="keyword indention">Scenario</span>
+                                <span id="scenario-name-text-{{feature_index}}-{{scenario_index}}" class="name">{{scenario.name}}</span>
+                                <i id="scenario-row-icon-{{feature_index}}-{{scenario_index}}" class="fa fa-chevron-right fa-fw"></i>
                             </div>                        
                             <div>
-                                <span class="lead-duration duration keyword indention">{{scenario.status}}</span>
+                                <span id = "scenario-status-text-{{feature_index}}-{{scenario_index}}" class="lead-duration duration keyword indention">{{scenario.status}}</span>
                             </div>      
                         </div>
                         <div id="element-{{feature_index}}-{{scenario_index}}" class=" collapsable-details collapse" aria-expanded="true">
                             <div class="steps inner-level">
                                 <div data-bs-toggle="collapse" class="steps-box bg-{{scenario.status}} collapsed collapsable-control" data-bs-target="#steps-{{feature_index}}-{{scenario_index}}" aria-expanded="false">
                                     <div class="steps-box">
-                                        <span class="keyword indention">Steps</span>
-                                        <i class="fa fa-chevron-right fa-fw"></i>
+                                        <span id="step-subtitle-text-{{feature_index}}-{{scenario_index}}" class="keyword indention">Steps</span>
+                                        <i id="step-row-icon-{{feature_index}}-{{scenario_index}}" class="fa fa-chevron-right fa-fw"></i>
                                     </div>
                                 </div>
                                 <div id="steps-{{feature_index}}-{{scenario_index}}" class="inner-level collapsable-details collapse" aria-expanded="false">
                                     {% for step in scenario.steps %}
                                     {% set step_index = loop.index %}
                                     <div>
-                                        <div id="step-box" class="step-name-{{step.keyword}} bg-{{step.status}}">
-                                            <span class="keyword indention">{{step.keyword}}</span>
-                                            <span class="name">{{step.name}}</span>
-                                            <span class="lead-duration duration">{{step.duration}}</span>
+                                        <div id="step-box-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="step-name-{{step.keyword}} bg-{{step.status}} step-box">
+                                            <span id="step-keyword-text-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="keyword indention">{{step.keyword}}</span>
+                                            <span id="step-name-text-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="name">{{step.name}}</span>
+                                            <span id="step-duration-text-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="lead-duration duration">{{step.duration}}</span>
                                         </div>
                                         <div class="inner-level">
                                             <div class="docstring indention">
                                                 <div>
-                                                    <a data-bs-toggle="collapse" class="collapsable-control text-italic" href="#msg{{feature_index}}-{{scenario_index}}-{{step_index}}">Doc string</a>
+                                                    <a id="step-msg-link-{{feature_index}}-{{scenario_index}}-{{step_index}}" data-bs-toggle="collapse" class="collapsable-control" href="#step-msg-{{feature_index}}-{{scenario_index}}-{{step_index}}">Doc string</a>
                                                 </div>
-                                                <div id="msg{{feature_index}}-{{scenario_index}}-{{step_index}}" class="collapse collapsable-details card bg-light">
-                                                    <pre class="card-body step-message">{{ step.message }}</pre>
+                                                <div id="step-msg-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="collapse collapsable-details card bg-light">
+                                                    <pre id="step-msg-content-{{feature_index}}-{{scenario_index}}-{{step_index}}" class="card-body step-message">{{ step.message }}</pre>
                                                 </div>
                                             </div>
                                         </div>

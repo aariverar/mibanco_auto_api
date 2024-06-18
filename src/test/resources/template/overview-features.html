@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test Report</title>
+    <title id="title-report">Mi Banco Report</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +16,7 @@
             <div id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link text-link-navbar" href="overview-features-final.html">Features</a>
+                        <a id ="navbar-features-link" class="nav-link text-link-navbar" href="overview-features-final.html">Features</a>
                     </li>
                 </ul>
             </div>
@@ -98,7 +99,7 @@
                                 {% for feature in features %} <!--Por cada feature-->
                                 {% set feature_index = loop.index %}
                                     <tr>
-                                        <td><a href="report-feature-{{feature_index}}.html">{{feature.feature_name }}</a> </td>
+                                        <td><a id="feature-text-{{feature_index}}" href="report-feature-{{feature_index}}.html">{{feature.feature_name }}</a> </td>
                                         <td>{{feature.scenario_passed_count}}</td>
                                         <td>{{feature.scenario_failed_count}}</td>
                                         <td>{{feature.scenario_skipped_count}}</td>

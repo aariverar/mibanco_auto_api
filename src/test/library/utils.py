@@ -145,7 +145,7 @@ def count_total_scenarios_and_steps(data):
     
     return total_scenarios, total_steps, scenarios_information
 
-def create_report_folder(template_folder_path, report_folder_path):
+def create_report_folder(template_folder_path, report_folder_path, source_files):
     date = datetime.now().strftime("%d-%m-%y_%H-%M-%S")
     folder_name = f"report-{date}"
 
@@ -154,7 +154,6 @@ def create_report_folder(template_folder_path, report_folder_path):
 
     # Definir las rutas a los archivos que se van a copiar
     source_folder = template_folder_path
-    source_files = ["logo_mibanco.png", "main.js", "style.css"]
 
     # Copiar los archivos
     for file_name in source_files:
