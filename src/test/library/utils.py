@@ -3,7 +3,6 @@ import os
 import shutil
 from datetime import datetime
 from jinja2 import Template
-from functools import wraps
 
 def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information):
 
