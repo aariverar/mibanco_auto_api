@@ -21,7 +21,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"1\"",
           "result": {
-            "duration": 0.046030521392822266,
+            "duration": 0.05413985252380371,
             "status": "passed"
           },
           "step_type": "given"
@@ -40,7 +40,7 @@
           },
           "name": "cuando envio un request al endpoint \"1\"",
           "result": {
-            "duration": 1.1496646404266357,
+            "duration": 1.1444709300994873,
             "status": "passed"
           },
           "step_type": "when"
@@ -59,7 +59,7 @@
           },
           "name": "se valida el estado del response con el esperado del excel \"1\"",
           "result": {
-            "duration": 0.0014460086822509766,
+            "duration": 0.0,
             "status": "passed"
           },
           "step_type": "then"
@@ -78,7 +78,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"1\"",
           "result": {
-            "duration": 0.0062503814697265625,
+            "duration": 0.016350269317626953,
             "status": "passed"
           },
           "step_type": "then"
@@ -110,7 +110,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"2\"",
           "result": {
-            "duration": 0.07107973098754883,
+            "duration": 0.12409710884094238,
             "status": "passed"
           },
           "step_type": "given"
@@ -129,7 +129,7 @@
           },
           "name": "cuando envio un request al endpoint \"2\"",
           "result": {
-            "duration": 1.0097038745880127,
+            "duration": 1.0936555862426758,
             "status": "passed"
           },
           "step_type": "when"
@@ -167,7 +167,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"2\"",
           "result": {
-            "duration": 0.03148531913757324,
+            "duration": 0.03567218780517578,
             "error_message": [
               "Assertion Failed: [LOG] Error al validar el contenido del response",
               "Captured stdout:",
@@ -225,7 +225,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"3\"",
           "result": {
-            "duration": 0.12673068046569824,
+            "duration": 0.03553366661071777,
             "status": "passed"
           },
           "step_type": "given"
@@ -244,7 +244,7 @@
           },
           "name": "cuando envio un request al endpoint \"3\"",
           "result": {
-            "duration": 1.1666734218597412,
+            "duration": 1.140495777130127,
             "status": "passed"
           },
           "step_type": "when"
@@ -282,7 +282,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"3\"",
           "result": {
-            "duration": 0.015616893768310547,
+            "duration": 0.03698849678039551,
             "status": "passed"
           },
           "step_type": "then"
@@ -314,7 +314,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"4\"",
           "result": {
-            "duration": 0.07816219329833984,
+            "duration": 0.0581355094909668,
             "status": "passed"
           },
           "step_type": "given"
@@ -333,7 +333,7 @@
           },
           "name": "cuando envio un request al endpoint \"4\"",
           "result": {
-            "duration": 0.8270108699798584,
+            "duration": 0.7601318359375,
             "status": "passed"
           },
           "step_type": "when"
@@ -371,7 +371,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"4\"",
           "result": {
-            "duration": 0.05721712112426758,
+            "duration": 0.06565451622009277,
             "status": "passed"
           },
           "step_type": "then"
@@ -403,7 +403,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"5\"",
           "result": {
-            "duration": 0.003495931625366211,
+            "duration": 0.010074138641357422,
             "status": "passed"
           },
           "step_type": "given"
@@ -441,7 +441,7 @@
           },
           "name": "se valida el estado del response con el esperado del excel \"5\"",
           "result": {
-            "duration": 0.009077072143554688,
+            "duration": 0.0040094852447509766,
             "status": "passed"
           },
           "step_type": "then"
