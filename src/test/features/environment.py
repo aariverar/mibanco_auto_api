@@ -3,6 +3,11 @@ import os
 from datetime import datetime
 from src.test.library.utils import *
 from src.test.library.variables import *
+import re
+from src.test.library.excel_reader import data
+
+def get_data():
+        return data("test_data.xlsx","Hoja1")
 
 def before_all(context):
     context.step_messages = []
@@ -53,12 +58,21 @@ def after_feature(context, feature):
 
 def before_scenario(context, scenario):
     context.state=None
+    numero= ''
+    patron= r'"(\d+)"'
+    numero=re.findall(patron,scenario.name)
+    if get_data()[int(numero[0])-1]["Ejecucion"] == "SI":
+        if get_data()[int(numero[0])-1]["Escenario"]:
+            scenario.name=get_data()[int(numero[0])-1]["Escenario"]    
+    else:
+        scenario.name="Escenario Skippeado"
+
     
 
 def after_scenario(context, scenario):
     if context.state is not None:
         scenario.set_status("skipped")
-    # You can add cleanup code here if necessary
+
 
 def before_step(context, step):
     """
