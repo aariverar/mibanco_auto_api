@@ -1,0 +1,502 @@
+[
+    {
+        "elements": [
+            {
+                "keyword": "Scenario Outline",
+                "location": "src/test/features/api_test.feature:12",
+                "name": "Api Test -- @1.1 ",
+                "status": "passed",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "location": "src/test/features/api_test.feature:5",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "1"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:9"
+                        },
+                        "name": "se lee el endpoint y lo headers del excel \"1\"",
+                        "result": {
+                            "duration": 0.05413985252380371,
+                            "status": "passed",
+                            "message": "Se extrae: \nEndpoint: https://reqres.in/api/login"
+                        },
+                        "step_type": "given"
+                    },
+                    {
+                        "keyword": "When",
+                        "location": "src/test/features/api_test.feature:6",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "1"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:25"
+                        },
+                        "name": "cuando envio un request al endpoint \"1\"",
+                        "result": {
+                            "duration": 1.1444709300994873,
+                            "status": "passed",
+                            "message": "<strong>REQUEST:</strong>\nPOST https://reqres.in/api/login\nRequest Headers: {\n    \"Content-Length\": \"57\",\n    \"Content-Type\": \"application/json\"\n}\nBody: {\n    \"email\": \"eve.holt@reqres.in\",\n    \"password\": \"cityslicka\"\n}\n\n<strong>RESPONSE:</strong>\nPOST - Code: 200 OK\nHeaders: {\n    \"Date\": \"Wed, 19 Jun 2024 20:12:56 GMT\",\n    \"Content-Type\": \"application/json; charset=utf-8\",\n    \"Content-Length\": \"29\",\n    \"Connection\": \"keep-alive\",\n    \"Report-To\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1718827976&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=tYePG2MGwzMiSOrGYAH4osA2T2VUIULmbN2OWQ3ZKZ8%3D\\\"}]}\",\n    \"Reporting-Endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1718827976&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=tYePG2MGwzMiSOrGYAH4osA2T2VUIULmbN2OWQ3ZKZ8%3D\",\n    \"Nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n    \"X-Powered-By\": \"Express\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Etag\": \"W/\\\"1d-lGCrvD6B7Qzk11+2C98+nGhhuec\\\"\",\n    \"Via\": \"1.1 vegur\",\n    \"CF-Cache-Status\": \"DYNAMIC\",\n    \"Server\": \"cloudflare\",\n    \"CF-RAY\": \"89662d42c938a576-MIA\"\n}\nElapsed Time: 0:00:01.128021\n{\n    \"token\": \"QpwL5tke4Pnpja7X4\"\n}\n"
+                        },
+                        "step_type": "when"
+                    },
+                    {
+                        "keyword": "Then",
+                        "location": "src/test/features/api_test.feature:7",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "1"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:69"
+                        },
+                        "name": "se valida el estado del response con el esperado del excel \"1\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "[LOG] Se valida el status Code\nExpected Status Code: 200\nActual Status Code: 200\n"
+                        },
+                        "step_type": "then"
+                    },
+                    {
+                        "keyword": "And",
+                        "location": "src/test/features/api_test.feature:8",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "1"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:91"
+                        },
+                        "name": "el response debe contener el contenido esperado del excel \"1\"",
+                        "result": {
+                            "duration": 0.016350269317626953,
+                            "status": "passed",
+                            "message": "No hay validaciones"
+                        },
+                        "step_type": "then"
+                    }
+                ],
+                "tags": [
+                    "test1",
+                    "Prueba"
+                ],
+                "type": "scenario"
+            },
+            {
+                "keyword": "Scenario Outline",
+                "location": "src/test/features/api_test.feature:13",
+                "name": "Api Test -- @1.2 ",
+                "status": "failed",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "location": "src/test/features/api_test.feature:5",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "2"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:9"
+                        },
+                        "name": "se lee el endpoint y lo headers del excel \"2\"",
+                        "result": {
+                            "duration": 0.12409710884094238,
+                            "status": "passed",
+                            "message": "Se extrae: \nEndpoint: https://reqres.in/api/login"
+                        },
+                        "step_type": "given"
+                    },
+                    {
+                        "keyword": "When",
+                        "location": "src/test/features/api_test.feature:6",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "2"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:25"
+                        },
+                        "name": "cuando envio un request al endpoint \"2\"",
+                        "result": {
+                            "duration": 1.0936555862426758,
+                            "status": "passed",
+                            "message": "<strong>REQUEST:</strong>\nPOST https://reqres.in/api/login\nRequest Headers: {\n    \"Content-Length\": \"31\",\n    \"Content-Type\": \"application/json\"\n}\nBody: {\n    \"email\": \"eve.holt@reqres.in\"\n}\n\n<strong>RESPONSE:</strong>\nPOST - Code: 400 Bad Request\nHeaders: {\n    \"Date\": \"Wed, 19 Jun 2024 20:12:57 GMT\",\n    \"Content-Type\": \"application/json; charset=utf-8\",\n    \"Content-Length\": \"28\",\n    \"Connection\": \"keep-alive\",\n    \"Report-To\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1718827977&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=OdhYwRrvfSbgosjId3NdY96KgQyEgCx5ixMpcuVJ%2FSs%3D\\\"}]}\",\n    \"Reporting-Endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1718827977&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=OdhYwRrvfSbgosjId3NdY96KgQyEgCx5ixMpcuVJ%2FSs%3D\",\n    \"Nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n    \"X-Powered-By\": \"Express\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Etag\": \"W/\\\"1c-NmpazMScs9tOqR7eDEesn+pqC9Q\\\"\",\n    \"Via\": \"1.1 vegur\",\n    \"CF-Cache-Status\": \"DYNAMIC\",\n    \"Server\": \"cloudflare\",\n    \"CF-RAY\": \"89662d4a7d807481-MIA\"\n}\nElapsed Time: 0:00:01.054833\n{\n    \"error\": \"Missing password\"\n}\n"
+                        },
+                        "step_type": "when"
+                    },
+                    {
+                        "keyword": "Then",
+                        "location": "src/test/features/api_test.feature:7",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "2"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:69"
+                        },
+                        "name": "se valida el estado del response con el esperado del excel \"2\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "[LOG] Se valida el status Code\nExpected Status Code: 400\nActual Status Code: 400\n"
+                        },
+                        "step_type": "then"
+                    },
+                    {
+                        "keyword": "And",
+                        "location": "src/test/features/api_test.feature:8",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "2"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:91"
+                        },
+                        "name": "el response debe contener el contenido esperado del excel \"2\"",
+                        "result": {
+                            "duration": 0.03567218780517578,
+                            "error_message": [
+                                "Assertion Failed: [LOG] Error al validar el contenido del response",
+                                "Captured stdout:",
+                                "[LOG] Se extrae del excel los datos",
+                                "[LOG] Se envia la peticion",
+                                "[LOG] Se valida el status Code",
+                                "Expected Status Code: 400",
+                                "Actual Status Code: 400",
+                                "[LOG] Se valida el contenido del response",
+                                "Expected Content_1",
+                                "Expected Content: token",
+                                "Actual Content: {",
+                                "    \"error\": \"Missing password\"",
+                                "}",
+                                "Expected Content_2",
+                                "Expected Content: {",
+                                "    \"error\": \"Missing password\"",
+                                "}",
+                                "Actual Content: {",
+                                "    \"error\": \"Missing password\"",
+                                "}",
+                                "Expected Content_3",
+                                " FAILED PASSED ",
+                                "[LOG] Error al validar el contenido del response",
+                                "Step failed: el response debe contener el contenido esperado del excel \"2\""
+                            ],
+                            "status": "failed",
+                            "message": "Error al validar el contenido del response:\n[LOG] Se valida el contenido del response\n\nExpected Content 1: token\nActual Content 1: {\n    \"error\": \"Missing password\"\n}\nFAILED\n\nExpected Content 2: {\n    \"error\": \"Missing password\"\n}\nActual Content 2: {\n    \"error\": \"Missing password\"\n}\nPASSED\n\n"
+                        },
+                        "step_type": "then"
+                    }
+                ],
+                "tags": [
+                    "test1",
+                    "Prueba"
+                ],
+                "type": "scenario"
+            },
+            {
+                "keyword": "Scenario Outline",
+                "location": "src/test/features/api_test.feature:14",
+                "name": "Api Test -- @1.3 ",
+                "status": "passed",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "location": "src/test/features/api_test.feature:5",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "3"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:9"
+                        },
+                        "name": "se lee el endpoint y lo headers del excel \"3\"",
+                        "result": {
+                            "duration": 0.03553366661071777,
+                            "status": "passed",
+                            "message": "Se extrae: \nEndpoint: https://reqres.in/api/users"
+                        },
+                        "step_type": "given"
+                    },
+                    {
+                        "keyword": "When",
+                        "location": "src/test/features/api_test.feature:6",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "3"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:25"
+                        },
+                        "name": "cuando envio un request al endpoint \"3\"",
+                        "result": {
+                            "duration": 1.140495777130127,
+                            "status": "passed",
+                            "message": "<strong>REQUEST:</strong>\nPOST https://reqres.in/api/users\nRequest Headers: {\n    \"Content-Length\": \"37\",\n    \"Content-Type\": \"application/json\"\n}\nBody: {\n    \"name\": \"morpheus\",\n    \"job\": \"leader\"\n}\n\n<strong>RESPONSE:</strong>\nPOST - Code: 201 Created\nHeaders: {\n    \"Date\": \"Wed, 19 Jun 2024 20:12:58 GMT\",\n    \"Content-Type\": \"application/json; charset=utf-8\",\n    \"Content-Length\": \"84\",\n    \"Connection\": \"keep-alive\",\n    \"Report-To\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1718827978&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=reGDdOP6ysum2ThIyTgds8Z0VCZV7xTu1KrxMzIDu6A%3D\\\"}]}\",\n    \"Reporting-Endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1718827978&sid=c4c9725f-1ab0-44d8-820f-430df2718e11&s=reGDdOP6ysum2ThIyTgds8Z0VCZV7xTu1KrxMzIDu6A%3D\",\n    \"Nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n    \"X-Powered-By\": \"Express\",\n    \"Access-Control-Allow-Origin\": \"*\",\n    \"Etag\": \"W/\\\"54-vgNCfXM9tdbga/a0PkO96VJvbgw\\\"\",\n    \"Via\": \"1.1 vegur\",\n    \"CF-Cache-Status\": \"DYNAMIC\",\n    \"Server\": \"cloudflare\",\n    \"CF-RAY\": \"89662d5209dc5c6f-MIA\"\n}\nElapsed Time: 0:00:01.112556\n{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\",\n    \"id\": \"520\",\n    \"createdAt\": \"2024-06-19T20:12:58.768Z\"\n}\n"
+                        },
+                        "step_type": "when"
+                    },
+                    {
+                        "keyword": "Then",
+                        "location": "src/test/features/api_test.feature:7",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "3"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:69"
+                        },
+                        "name": "se valida el estado del response con el esperado del excel \"3\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "[LOG] Se valida el status Code\nExpected Status Code: 201\nActual Status Code: 201\n"
+                        },
+                        "step_type": "then"
+                    },
+                    {
+                        "keyword": "And",
+                        "location": "src/test/features/api_test.feature:8",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "3"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:91"
+                        },
+                        "name": "el response debe contener el contenido esperado del excel \"3\"",
+                        "result": {
+                            "duration": 0.03698849678039551,
+                            "status": "passed",
+                            "message": "\n[LOG] Se valida el contenido del response\n\nExpected Content 1: leader\nActual Content 1: {\n    \"name\": \"morpheus\",\n    \"job\": \"leader\",\n    \"id\": \"520\",\n    \"createdAt\": \"2024-06-19T20:12:58.768Z\"\n}\nPASSED\n\n"
+                        },
+                        "step_type": "then"
+                    }
+                ],
+                "tags": [
+                    "test1",
+                    "Prueba"
+                ],
+                "type": "scenario"
+            },
+            {
+                "keyword": "Scenario Outline",
+                "location": "src/test/features/api_test.feature:15",
+                "name": "Api Test -- @1.4 ",
+                "status": "passed",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "location": "src/test/features/api_test.feature:5",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "4"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:9"
+                        },
+                        "name": "se lee el endpoint y lo headers del excel \"4\"",
+                        "result": {
+                            "duration": 0.0581355094909668,
+                            "status": "passed",
+                            "message": "Se extrae: \nEndpoint: https://jsonplaceholder.typicode.com/todos/1"
+                        },
+                        "step_type": "given"
+                    },
+                    {
+                        "keyword": "When",
+                        "location": "src/test/features/api_test.feature:6",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "4"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:25"
+                        },
+                        "name": "cuando envio un request al endpoint \"4\"",
+                        "result": {
+                            "duration": 0.7601318359375,
+                            "status": "passed",
+                            "message": "<strong>REQUEST:</strong>\nPUT https://jsonplaceholder.typicode.com/todos/1\nRequest Headers: {\n    \"User-Agent\": \"python-requests/2.32.2\",\n    \"Accept-Encoding\": \"gzip, deflate\",\n    \"Accept\": \"application/json\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Length\": \"0\"\n}\n\n\n<strong>RESPONSE:</strong>\nPUT - Code: 200 OK\nHeaders: {\n    \"Date\": \"Wed, 19 Jun 2024 20:12:59 GMT\",\n    \"Content-Type\": \"application/json; charset=utf-8\",\n    \"Content-Length\": \"13\",\n    \"Connection\": \"keep-alive\",\n    \"Report-To\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1718827979&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=PN%2F4mJKvzRFF3nb233VP6tNTzZlAAAzEyKMSN6CYpB4%3D\\\"}]}\",\n    \"Reporting-Endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1718827979&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=PN%2F4mJKvzRFF3nb233VP6tNTzZlAAAzEyKMSN6CYpB4%3D\",\n    \"Nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n    \"X-Powered-By\": \"Express\",\n    \"X-Ratelimit-Limit\": \"1000\",\n    \"X-Ratelimit-Remaining\": \"999\",\n    \"X-Ratelimit-Reset\": \"1718828031\",\n    \"Vary\": \"Origin, Accept-Encoding\",\n    \"Access-Control-Allow-Credentials\": \"true\",\n    \"Cache-Control\": \"no-cache\",\n    \"Pragma\": \"no-cache\",\n    \"Expires\": \"-1\",\n    \"X-Content-Type-Options\": \"nosniff\",\n    \"Etag\": \"W/\\\"d-p13Thq1mbIznE8TsFv4BmW8SRpg\\\"\",\n    \"Via\": \"1.1 vegur\",\n    \"CF-Cache-Status\": \"DYNAMIC\",\n    \"Server\": \"cloudflare\",\n    \"CF-RAY\": \"89662d58f8d7077c-IAD\",\n    \"alt-svc\": \"h3=\\\":443\\\"; ma=86400\"\n}\nElapsed Time: 0:00:00.751554\n{\n    \"id\": 1\n}\n"
+                        },
+                        "step_type": "when"
+                    },
+                    {
+                        "keyword": "Then",
+                        "location": "src/test/features/api_test.feature:7",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "4"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:69"
+                        },
+                        "name": "se valida el estado del response con el esperado del excel \"4\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "[LOG] Se valida el status Code\nExpected Status Code: 200\nActual Status Code: 200\n"
+                        },
+                        "step_type": "then"
+                    },
+                    {
+                        "keyword": "And",
+                        "location": "src/test/features/api_test.feature:8",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "4"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:91"
+                        },
+                        "name": "el response debe contener el contenido esperado del excel \"4\"",
+                        "result": {
+                            "duration": 0.06565451622009277,
+                            "status": "passed",
+                            "message": "\n[LOG] Se valida el contenido del response\n\nExpected Content 1: {\n    \"id\": 1\n}\nActual Content 1: {\n    \"id\": 1\n}\nPASSED\n\nExpected Content 2: id\nActual Content 2: {\n    \"id\": 1\n}\nPASSED\n\nExpected Content 3: 1\nActual Content 3: {\n    \"id\": 1\n}\nPASSED\n\n"
+                        },
+                        "step_type": "then"
+                    }
+                ],
+                "tags": [
+                    "test1",
+                    "Prueba"
+                ],
+                "type": "scenario"
+            },
+            {
+                "keyword": "Scenario Outline",
+                "location": "src/test/features/api_test.feature:16",
+                "name": "Api Test -- @1.5 ",
+                "status": "skipped",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "location": "src/test/features/api_test.feature:5",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "5"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:9"
+                        },
+                        "name": "se lee el endpoint y lo headers del excel \"5\"",
+                        "result": {
+                            "duration": 0.010074138641357422,
+                            "status": "passed",
+                            "message": "NO-EXECUTED"
+                        },
+                        "step_type": "given"
+                    },
+                    {
+                        "keyword": "When",
+                        "location": "src/test/features/api_test.feature:6",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "5"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:25"
+                        },
+                        "name": "cuando envio un request al endpoint \"5\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "NO-EXECUTED"
+                        },
+                        "step_type": "when"
+                    },
+                    {
+                        "keyword": "Then",
+                        "location": "src/test/features/api_test.feature:7",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "5"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:69"
+                        },
+                        "name": "se valida el estado del response con el esperado del excel \"5\"",
+                        "result": {
+                            "duration": 0.0040094852447509766,
+                            "status": "passed",
+                            "message": "NO-EXECUTED"
+                        },
+                        "step_type": "then"
+                    },
+                    {
+                        "keyword": "And",
+                        "location": "src/test/features/api_test.feature:8",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "name": "datos",
+                                    "value": "5"
+                                }
+                            ],
+                            "location": "src/test/features/steps/api_steps.py:91"
+                        },
+                        "name": "el response debe contener el contenido esperado del excel \"5\"",
+                        "result": {
+                            "duration": 0.0,
+                            "status": "passed",
+                            "message": "NO-EXECUTED"
+                        },
+                        "step_type": "then"
+                    }
+                ],
+                "tags": [
+                    "test1",
+                    "Prueba"
+                ],
+                "type": "scenario"
+            }
+        ],
+        "keyword": "Feature",
+        "location": "src/test/features/api_test.feature:1",
+        "name": "API Testing from Excel",
+        "status": "failed",
+        "tags": []
+    }
+]
