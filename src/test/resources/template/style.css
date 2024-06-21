@@ -1,3 +1,7 @@
+.card-body-limited{
+    max-width: 50px
+}
+
 .body {
     font-family: Arial, sans-serif;
     font-size: 14px;

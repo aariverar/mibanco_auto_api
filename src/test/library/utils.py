@@ -170,8 +170,6 @@ def modify_json_with_message(json_data,step_messages):
                 for msg in step_messages:
                     if msg['step_name'] == step['name']:
                         # Añadir el mensaje personalizado al step
-                        print(msg['step_name'])
-                        print(msg['message'])
                         step['result']['message'] = msg['message']
                         break
     return json_data

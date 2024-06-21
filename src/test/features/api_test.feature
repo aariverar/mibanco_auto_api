@@ -1,7 +1,7 @@
-Feature: API Testing from Excel
+Feature: Automatizacion de Servicios
 
   @test1 @Prueba
-  Scenario Outline: Api Test
+  Scenario Outline: Api Test "<datos>"
     Given se lee el endpoint y lo headers del excel "<datos>"
     When cuando envio un request al endpoint "<datos>"
     Then se valida el estado del response con el esperado del excel "<datos>"
@@ -14,3 +14,4 @@ Feature: API Testing from Excel
       |     3 |
       |     4 |
       |     5 |
+      |     6 |
