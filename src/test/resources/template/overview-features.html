@@ -46,28 +46,31 @@
                 </div>
             </div>
         </div>
-        <div class="element">
-            <div id="features-statistics-report">
+        <div class="element card">
+            <div id="features-statistics-report" class="card-header">
                 <div class="d-flex flex-row justify-content-around">
-                    <div>
-                        <h2>Features Stats</h2>
-                        <div class="summary-widgets-features d-flex flex-row">
-                            <div>
-                                <div class="features-count d-flex flex-col">{{total_features}}</div>
-                                <div class="subtitles-text">Features</div>
-                            </div>
-                            <div>
-                                <div class="scenarios-count d-flex flex-col">{{total_scenarios}}</div>
-                                <div class="subtitles-text">Scenarios</div>
-                            </div>
-                            <div>
-                                <div class="steps-count d-flex flex-col">{{total_steps}}</div>
-                                <div class="subtitles-text">Steps</div>
+                    <div id="summary-widgets-features" class="d-flex flex-row justify-content-around">
+                        <div class="card"> 
+                            <div class="card-body">
+                                <h6 class="subtitles-text">Features</h6>
+                                <h1 class="features-count d-flex flex-col">{{total_features}}</h1>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="subtitles-text">Scenarios</h6>
+                                <h1 class="scenarios-count d-flex flex-col">{{total_scenarios}}</h1>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="subtitles-text">Steps</h1>
+                                <h1 class="steps-count d-flex flex-col">{{total_steps}}</h6>
+                            </div>     
+                        </div>
                     </div>
-                    <div class="chart-canvas-style justify-content-center d-flex flex-row align-items-center">
-                        <canvas class="chart-scenarios"
+                    <div class="chart-canvas-style justify-content-center d-flex flex-row align-items-center card">
+                        <canvas class="chart-scenarios card-body"
                                 data-passed="{{ scenarios_information.total_scenarios_passed }}"
                                 data-failed="{{ scenarios_information.total_scenarios_failed }}"
                                 data-skipped="{{ scenarios_information.total_scenarios_skipped }}">

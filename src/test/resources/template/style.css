@@ -56,7 +56,7 @@
     padding-left: 1px;
 }
 
-#feature-report, #features-statistics-report{
+#feature-report {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 30px;
@@ -67,6 +67,13 @@
 }
 #features-statistics-report > div{
     margin:20px 20px 30px 20px;
+}
+
+#features-statistics-report{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #fdfdfd;
+    justify-content: center;
 }
 
 #table-project{
@@ -138,21 +145,21 @@ margin: 20px;
     width: 40%;
 }
 
-.features-count, .scenarios-count, .steps-count{
+/* .features-count, .scenarios-count, .steps-count{
     font-size: 3.5em;
     line-height: 1;
     box-sizing: border-box;
     text-align: center;
     justify-content: center;
-}
-.summary-widgets-features{
+} */
+/* #summary-widgets-features{
     padding:20px;
     margin-top: 20px;
     margin-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fdfdfd;
-}
+} */
 .summary-widgets-features>div{
     margin: 15px;
 }
