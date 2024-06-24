@@ -5,7 +5,7 @@ import openpyxl
 from datetime import datetime
 from jinja2 import Template
 
-def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information, count_assertions):
+def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information):
 
     with open(template, 'r', encoding='utf-8') as file:
         template_content = file.read()
@@ -26,8 +26,7 @@ def generate_html_for_all_features(template, output_path, data, scenarios, steps
                                   scenarios_information=scenarios_information,
                                   date=fecha_formateada,
                                   total_duration=total_duration,
-                                  average_duration=average_duration,
-                                  count_assertions=count_assertions)
+                                  average_duration=average_duration)
     
     # Write the HTML output to a file
     output_path = os.path.join(output_path,"overview-features.html")
@@ -183,29 +182,29 @@ def sum_durations_and_average_duration(data):
 
     return total_duration_str, average_duration_str
 
-def count_non_empty_expected_cells(excel_path, desired_headers):
-    # Load the workbook and select the active sheet
-    workbook = openpyxl.load_workbook(excel_path)
-    sheet = workbook.active
+# def count_non_empty_expected_cells(excel_path, desired_headers):
+#     # Load the workbook and select the active sheet
+#     workbook = openpyxl.load_workbook(excel_path)
+#     sheet = workbook.active
     
-    # Initialize the count of non-empty cells for the desired headers
-    non_empty_count = 0
+#     # Initialize the count of non-empty cells for the desired headers
+#     non_empty_count = 0
     
-    # Retrieve the headers from the first row and create a mapping to their column letters
-    headers = {cell.value: cell.column_letter for cell in sheet[1]}
+#     # Retrieve the headers from the first row and create a mapping to their column letters
+#     headers = {cell.value: cell.column_letter for cell in sheet[1]}
     
-    # Filter the headers to only include the ones specified in desired_headers
-    filtered_columns = [headers[header] for header in desired_headers if header in headers]
+#     # Filter the headers to only include the ones specified in desired_headers
+#     filtered_columns = [headers[header] for header in desired_headers if header in headers]
     
-    # Iterate through each row in the sheet, starting from the second row
-    for row in range(2, sheet.max_row + 1):
-        # Check each desired field in the row
-        for col in filtered_columns:
-            # If the cell is not empty, increment the count
-            if sheet[f'{col}{row}'].value is not None:
-                non_empty_count += 1
+#     # Iterate through each row in the sheet, starting from the second row
+#     for row in range(2, sheet.max_row + 1):
+#         # Check each desired field in the row
+#         for col in filtered_columns:
+#             # If the cell is not empty, increment the count
+#             if sheet[f'{col}{row}'].value is not None:
+#                 non_empty_count += 1
                 
-    return non_empty_count
+#     return non_empty_count
 
 def modify_json_with_message(json_data,step_messages):
     for feature in json_data:
