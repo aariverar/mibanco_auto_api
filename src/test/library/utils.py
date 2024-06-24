@@ -1,12 +1,13 @@
 import json
 import os
 import shutil
+import openpyxl
 from datetime import datetime
 from jinja2 import Template
 
-def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information):
+def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information, count_assertions):
 
-    with open(template, 'r') as file:
+    with open(template, 'r', encoding='utf-8') as file:
         template_content = file.read()
     template = Template(template_content)
 
@@ -16,18 +17,22 @@ def generate_html_for_all_features(template, output_path, data, scenarios, steps
     fecha_formateada = execution_time.strftime(formato)
 
     total_features = len(data)
+    total_duration, average_duration = sum_durations_and_average_duration(data)
 
     html_output = template.render(features=data, 
                                   total_features=total_features, 
                                   total_scenarios=scenarios, 
                                   total_steps=steps, 
                                   scenarios_information=scenarios_information,
-                                  date=fecha_formateada)
+                                  date=fecha_formateada,
+                                  total_duration=total_duration,
+                                  average_duration=average_duration,
+                                  count_assertions=count_assertions)
     
     # Write the HTML output to a file
     output_path = os.path.join(output_path,"overview-features.html")
    
-    with open(output_path, 'w') as file:
+    with open(output_path, 'w', encoding='utf-8' ) as file:
         file.write(html_output)
 
 def generate_html_for_each_feature(template, output_path, data):
@@ -162,6 +167,46 @@ def create_report_folder(template_folder_path, report_folder_path, source_files)
 
     return html_features_output
 
+def sum_durations_and_average_duration(data):
+    total_duration = 0
+    step_count = 0
+    for feature in data:
+        for scenario in feature['scenarios']:
+            for step in scenario['steps']:
+                total_duration += step['duration']
+                step_count += 1
+    if step_count == 0:
+        return "0s", "0s"
+    average_duration = total_duration / step_count
+    total_duration_str = str(round(total_duration, 2)) + "s"
+    average_duration_str = str(round(average_duration, 2)) + "s"
+
+    return total_duration_str, average_duration_str
+
+def count_non_empty_expected_cells(excel_path, desired_headers):
+    # Load the workbook and select the active sheet
+    workbook = openpyxl.load_workbook(excel_path)
+    sheet = workbook.active
+    
+    # Initialize the count of non-empty cells for the desired headers
+    non_empty_count = 0
+    
+    # Retrieve the headers from the first row and create a mapping to their column letters
+    headers = {cell.value: cell.column_letter for cell in sheet[1]}
+    
+    # Filter the headers to only include the ones specified in desired_headers
+    filtered_columns = [headers[header] for header in desired_headers if header in headers]
+    
+    # Iterate through each row in the sheet, starting from the second row
+    for row in range(2, sheet.max_row + 1):
+        # Check each desired field in the row
+        for col in filtered_columns:
+            # If the cell is not empty, increment the count
+            if sheet[f'{col}{row}'].value is not None:
+                non_empty_count += 1
+                
+    return non_empty_count
+
 def modify_json_with_message(json_data,step_messages):
     for feature in json_data:
         for element in feature.get('elements', []):
@@ -173,9 +218,3 @@ def modify_json_with_message(json_data,step_messages):
                         step['result']['message'] = msg['message']
                         break
     return json_data
-
-        
-    
-
-
-

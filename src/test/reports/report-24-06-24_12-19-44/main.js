@@ -39,18 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
                             font: {
                                 size: 20 
                             }
-                        }
-                    },
-                    tooltips: {
-                        callbacks: {
-                            label: function(tooltipItem, data) {
-                                var label = data.labels[tooltipItem.index] || '';
-                                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                                var total = data.datasets[tooltipItem.datasetIndex].data.reduce(function(a, b) {
-                                    return a + b;
-                                }, 0);
-                                var percentage = ((value / total) * 100).toFixed(2);
-                                return label + ': ' + value + ' (' + percentage + '%)';
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    var label = context.label || '';
+                                    var value = context.parsed;
+                                    var total = context.dataset.data.reduce(function(a, b) {
+                                        return a + b;
+                                    }, 0);
+                                    var percentage = ((value / total) * 100).toFixed(2);
+                                    return label + ': ' + value + ' (' + percentage + '%)';
+                                }
                             }
                         }
                     }
