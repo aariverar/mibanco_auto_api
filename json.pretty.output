@@ -21,7 +21,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"1\"",
           "result": {
-            "duration": 0.06024026870727539,
+            "duration": 0.04428458213806152,
             "status": "passed"
           },
           "step_type": "given"
@@ -40,7 +40,7 @@
           },
           "name": "cuando envio un request al endpoint \"1\"",
           "result": {
-            "duration": 1.079590082168579,
+            "duration": 0.8149013519287109,
             "status": "passed"
           },
           "step_type": "when"
@@ -78,7 +78,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"1\"",
           "result": {
-            "duration": 0.021172285079956055,
+            "duration": 0.0311129093170166,
             "status": "passed"
           },
           "step_type": "then"
@@ -110,7 +110,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"2\"",
           "result": {
-            "duration": 0.00959014892578125,
+            "duration": 0.0,
             "status": "passed"
           },
           "step_type": "given"
@@ -148,7 +148,7 @@
           },
           "name": "se valida el estado del response con el esperado del excel \"2\"",
           "result": {
-            "duration": 0.0,
+            "duration": 0.0010485649108886719,
             "status": "passed"
           },
           "step_type": "then"
@@ -167,7 +167,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"2\"",
           "result": {
-            "duration": 0.0003209114074707031,
+            "duration": 0.00027370452880859375,
             "status": "passed"
           },
           "step_type": "then"
@@ -199,7 +199,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"3\"",
           "result": {
-            "duration": 0.05500507354736328,
+            "duration": 0.04974651336669922,
             "status": "passed"
           },
           "step_type": "given"
@@ -218,7 +218,7 @@
           },
           "name": "cuando envio un request al endpoint \"3\"",
           "result": {
-            "duration": 0.8129737377166748,
+            "duration": 0.7136890888214111,
             "status": "passed"
           },
           "step_type": "when"
@@ -256,7 +256,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"3\"",
           "result": {
-            "duration": 0.05447959899902344,
+            "duration": 0.0535578727722168,
             "error_message": [
               "Assertion Failed: [LOG] Error al validar el contenido del response",
               "Captured stdout:",
@@ -269,8 +269,8 @@
               "Actual Content: {",
               "    \"name\": \"morpheus\",",
               "    \"job\": \"leader\",",
-              "    \"id\": \"881\",",
-              "    \"createdAt\": \"2024-06-24T17:45:08.876Z\"",
+              "    \"id\": \"635\",",
+              "    \"createdAt\": \"2024-06-25T15:30:59.147Z\"",
               "}",
               "Expected Content_1",
               "Expected Content: leader",
@@ -314,7 +314,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"4\"",
           "result": {
-            "duration": 0.05960536003112793,
+            "duration": 0.05061912536621094,
             "status": "passed"
           },
           "step_type": "given"
@@ -333,7 +333,7 @@
           },
           "name": "cuando envio un request al endpoint \"4\"",
           "result": {
-            "duration": 0.9717860221862793,
+            "duration": 0.7687647342681885,
             "status": "passed"
           },
           "step_type": "when"
@@ -371,7 +371,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"4\"",
           "result": {
-            "duration": 0.06001710891723633,
+            "duration": 0.047304391860961914,
             "status": "passed"
           },
           "step_type": "then"
@@ -403,7 +403,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"5\"",
           "result": {
-            "duration": 0.0701596736907959,
+            "duration": 0.05309009552001953,
             "status": "passed"
           },
           "step_type": "given"
@@ -422,7 +422,7 @@
           },
           "name": "cuando envio un request al endpoint \"5\"",
           "result": {
-            "duration": 0.6532316207885742,
+            "duration": 1.1313512325286865,
             "status": "passed"
           },
           "step_type": "when"
@@ -460,7 +460,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"5\"",
           "result": {
-            "duration": 0.06291317939758301,
+            "duration": 0.07909607887268066,
             "error_message": [
               "Assertion Failed: [LOG] Error al validar el contenido del response",
               "Captured stdout:",
@@ -471,7 +471,7 @@
               "Actual Status Code: 200",
               "[LOG] Se valida el contenido del response",
               "Actual Content: {",
-              "    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ3aGl0ZWxpc3Qtc3RhdGUiOiJiOGNjNzkyNS04OTI2LTQwZTMtOWRiOS1iN2IwZGVjZWEzOGMiLCJhdXRoSW5kZXhWYWx1ZSI6Im1pYmFuY28tbG9naW4tcmVjYXB0Y2hhIiwib3RrIjoiaTJrY2EwajJhdDZvZXJvY29udmVmMnM0ZGciLCJhdXRoSW5kZXhUeXBlIjoic2VydmljZSIsInJlYWxtIjoiL2FscGhhIiwic2Vzc2lvbklkIjoiKkFBSlRTUUFDTURJQUJIUjVjR1VBQ0VwWFZGOUJWVlJJQUFKVE1RQUNNREUuKmV5SjBlWEFpT2lKS1YxUWlMQ0pqZEhraU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuWlhsS01HVllRV2xQYVVwTFZqRlJhVXhEU214aWJVMXBUMmxLUWsxVVNUUlJNRXBFVEZWb1ZFMXFWVEpKYVhkcFdWZDRia2xxYjJsYVIyeDVTVzR3TGk1cVpHVk5jRUpNZWpoSVpWUnhXbFpxUTB0Nk4yWm5MbE5YWnpBd1UyMHRkWEZFVFVvMGJYRlBWMmx2VDFWRFdtOHlRV2hDYzFSeVUxRlJZM014U2xsZmIzTXhjMkpLZUVVdGJXWnlUV1F5V1RsaVIyOWpjM1ZqT0ZBNFptUmhNWGhaVUV4WlpXeEVibUZ0VXkxMWFGZHpSemxoTW5SdVFtbFFaRVZrWmxkWFNFeG1RMGhMTFRGamJqbDBXVVpzVGtZdExYQjBlVlF5TTJKSFlYUTVlVE51UVhsTVkyNWxkRUpQZVZWb1RFdE9OV3BKWW1kUVVYTkVRMnB4Y2pCaFlrRkxZVlJtWDFCTU56TXdNbmhCTmxVeFdYRkNSREJwYzI1SlkyOWlOVmxQV25WSFZHSlZlRmhtV2w5YU9VZFNiVzlhVEZWbFdqSk5lSFF5VTJaMk1taFdPRkZRVGkxa1JuTkdiamc1Y0dac1FXMUlWRmt4T1c5U1RUWlVTVmhHUm0xaE1FcGpiMFpxY0Vkb1Z6TlVTRjlXVjFsSWVXbGpXVzVJUm5vMlRGUnhWMnA1V2xGeGFVbGpkRk5mYWtkbWFHMHdOa3d5U0ZWTllrVXdNamh0V1VOVVJsbGlhMDl1Y0Y5NVFUSlhZM1JTVUROdFIyaG5kVUZvTUZSRlVIYzBPR3RJT1RCdGNsSjJhRU5mWjJNM1RGSm5NVEpzUjJOVlVtOTBlbDlKVm5wM1VHZHBiRzB3TVVwaFYzWm5iM0ZUVWpZNVNrZGtUMDVYTUZWYU5HWnJXbE5aZVdOU2VucG5kM28xYlZkU1RTMWtTRk5tWjAwd1F6UlljRTA1TVhRd2JFOHdjMUJSTmtWalZXWmpXbEEyUjI1bFlrWjBUREZvZW5nM1NVaFphbUpxZEU1NVZ6TTJhVFIzV0hWNWIyNDVMVnBrV0hkcU5FSjZUbU5RT0hSeldYUkJhR2xpVlhGYWRHMURhRUZYU0RsVVNsaGhYMnA0YlVGUlpuaFNaa1JzWkV4ZmVtSlBYMTlpWjJST1QyZFdSWGRJTm5SNU1rOXVUVXMzYTBzNGEybFRkVGRNWDFOV1QzbFBjRmMwUTNKVlVXMU5UMW8zYm1nMk9FdGtRWEZzYVZCcGRYbENhek52Y2tWa0xVc3pNM3ByUWpobE9UVmFWVk4wTjAxdE5XVkRNVk5XZGxGTWMwWmtXRGxwWmtzMVJEWm1NRk5DYjFCWk5rODNiMFoxWkVkMVdYRTVUMlZQUzAxcmREQm1ialpaTTNKWWJHTkRMWGQxTkZVdE1Xb3plR1pJWVVkUk1FNXFTR1pPTFV0eFYxVlRMVGs0YVVnM1dHUkRZMmRTYUZBM2VqTkxaV1JKYzBScVExOUdOMUphUkZCa1UwZFphbkU0UkRCaFJHbDJWbGsxWkZaclNIaHlNMEpRTjJSV1ZGaEpjRWRrTjNJMlVUbFZXRWRrWkdGUlZscFZaMVowV2xsRVZsbElTRUYyVW0xNE9YRmhORlpGZWkxRmIzbEllRzlxU0hCblRYTnFUamhHVkdGYVpYZHZNbU5mV1VoRVVGcEZOVzEyVWpkR2IyOTZPRXBNUkRaTE9WaHRWV2xLWVVwTVRHMVNielJQUlV0NWFFeFJNSE5JU0d0ckxTMVpNbkJ2Y2xaTFIzSnlNM1ZPTUdrMWRuTmxWMFpOTjNCUFEzaHhRV1phTjJSdVNFZEtjVEU1YnpOYVN6Z3pYMVJ2TkdsSVgxWm1XbGwxU1haeFdrazRhSGxaTFZCdVMwWXhjbVJNTWpkdGJtODRkSE5wWVZwVFMwOVRaalY0YkROcU5WbFVNR2hNYVhJeGNXVjVSVk16ZDFwYVpFcHhURXRhU1dvMlNYVmZjVjh3TW1oNVpqaDVVMFpxVkZWcVdqVnpaVVpHYlhWblNWTnpWbGhvZGxKWU9XUnVUakZ5V1VFMGF6ZHBhWGhHTm0wdE9HbDVNMnBqU0Zoek1HTklTMFkxWjBzMWVFNVZhak13Y1hObldsQmhWVmMzY0RVMloxbFhOMVp2T0RsSGFISnFOV3gxWWxCcVgySmlkMnBUUjI5MVZuQktabE5JVjFaV2FGQnpWMDA1Y0hKdVFVRjJVR2w0Vm1JdFIxOVNURUZGUzBSRVNXRlNNRFUyYWxRM1RVVlViMXA1Tlc1b05ERlJOblZKZVVVNVdqZHBjaTFRYVdKMVVVeFljbGxtV1ZveFJIVk9Ta2RZU214VFQzSmZVM05WUmpVemVsaDJYekV6TVZsTFVrOU9NbTVpY2t4VVozTjVVRmRLZDA1Vk1uVk1Wamt5WjNOc05VcDNhbGRvZFZka2RFTTNSVlF4VjFSdWJreEpRVWd5T1V4RWFETTFVMnhzWkZKUmRXczVkVmhsVGtGelZYSm1Oa0V0VjNKSlNuSnJNMjAzYVZJd2N6QkRaR3ByUm1rM1oybFlWVzk1UjJoTWVYVmFRWGh2ZEU5UmJFTjZObVJoVHpCdFltZDVhWEpmUW1Wb2JVRXdWM2c0TjJWdlZrWmxTM2RHT0MweE1YUk9XSGxWWWxGVE1HRlVlVXRmYmxSUGMyMVhaR0UzVTI5cWVWb3RiMDlpYzFkdVJHNHhXVlZwZDAxM2ExUjZjSEZxZERkMmNERjRiRXN3VVhsR1ZYbG5ablk1VTFFME9FWjRSblZNYTBJMGIyMVFVUzVKWTNGWmNFUmpSbXN4WWt3d2MySnhWbGhmVlhobi4yMWE0cUxFck8ySk9oTDg3dGFEczlxWXJGVWpBRUJJX29qQV82a0tMcDZFIiwiZXhwIjoxNzE5MjUxNDcwLCJpYXQiOjE3MTkyNTExMTB9.1VesEhI06yqwzVflyoj25579OSKTEKigtoNh4zo2sAk\",",
+              "    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ3aGl0ZWxpc3Qtc3RhdGUiOiIxOGRiNjA0Yy02N2ViLTRmNjktOTJjMS02NTAwNDNmNTEyMDEiLCJhdXRoSW5kZXhWYWx1ZSI6Im1pYmFuY28tbG9naW4tcmVjYXB0Y2hhIiwib3RrIjoiYm1qbDA5Y3Q4ZmQzamdhazdhZjh0dm5tZ2giLCJhdXRoSW5kZXhUeXBlIjoic2VydmljZSIsInJlYWxtIjoiL2FscGhhIiwic2Vzc2lvbklkIjoiKkFBSlRTUUFDTURJQUJIUjVjR1VBQ0VwWFZGOUJWVlJJQUFKVE1RQUNNREUuKmV5SjBlWEFpT2lKS1YxUWlMQ0pqZEhraU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuWlhsS01HVllRV2xQYVVwTFZqRlJhVXhEU214aWJVMXBUMmxLUWsxVVNUUlJNRXBFVEZWb1ZFMXFWVEpKYVhkcFdWZDRia2xxYjJsYVIyeDVTVzR3TGk1M1MweDNlbnBMUWpNeVgybDBWWE01V0VFMWJuRjNMa2xwTVd0TmJqQm9NRmxFTFdNMldWQkJWMEp4UWtOR1ptVkNSMFprZGtjNE1EZDJhbkpWYTBsSVJVdDZZVGRhVEhGVE9XaHlaWEZNWld0c1pDMVlhbkV0TUc0eFdtWm1PR3c1YURKV1ZqSmFYMDlrYXpoNFNHUldOWGd4WkV4bWFFRmxORGxqTm1JdFJrRnlTV2t3WVRad1dUVmtTREkxZUVvdE1FdzRZVzlRWkU5WlRXNVJORnBrYjNOdVQwaHFSRzFoWWxkYWRFRnhhVkJoVjFrNFFuWnRNR3BKWlUwNGNtcDRNbmcxYzFjMlQwUTRaRFl4TVVOQmIzaG1SekU0Y1dNMFpFSnJNR0UyTWxSVlV5MW5VV1ZoYW14V05IRkhhMHhMWmpCdGNFbG1WVVJ4V1ZscVNYQmtRVzVITFRoZldpMHhYMHR1WVZaSloyNTJiMlZUYlRsdE5tTjJVVGRpTlV0NWNUbE9XRlYzWkRadWEyUTRiWGwyVVZGNlQzRnhlVFUwYlRkNFMwNXZNR2xVTWtNNVZYQlhPVnBuVmpWU1UwRmZXVWREWWw5dFJrVldVa3RXUVMwMFdFc3dVMDUxUm1OYWFTMUNiRlZ5TmpWRGRsUnVNV1ZUYWxOTmRuTmlkWFJGYjJwSmFuRjFlVEUzYWpCWFJVWmtlRU5HUjJKdGVHSXdNbVJtVGpNd01YRlhWMmhNZVdkdmMxZG1aMmMyYWpSTFNVcDZiMk5yTFdSbFYwYzFPRlJUUnpOelVuWnBkV0ZXYkc5S2NFaFJiblpETlZkTU16QlhhSEJOY1dGYVUyNWhjbTAyWWtWeVFqaGpUbTEwYVc0NE5VZHNSV3RSUmpORU9FRTJTRFJrVTNGdFRHVkxUMFprU1dSVWFURlhWVGN0WjBsR09VNTBPRUpVTUhZd1NHdzFjbk5oWWpWNmNuaGFOMmhDYVdGUFIwbFROa2hsZEdWbFUzYzFXVEk1T0hwTmJXb3lRekJtYWpkeWMxSkNOVEE1YzBWUlNTMXNjV0pxVGs0NFkzcHZWWFpKTkc1eWIxbEJPVUZ2Y2xJNFIyMWxjVUp6YlRSek0zaFBjbVZMUmxOWU5sbFJkekpRZGxKVFpXUllhREJHYkU5T1VWbERjbFEwTnpKVlVsZEdOMVZGTjA1alNWbHRlRTVCV0UxRU1HSjNXVkF5TFhadFdYbGFjSFpXTnpGaGMzbzJMVEpvWlVGM1JrdDRjVTFJVGtKeWJsZDRRbXRCZDFZemExSXhkVjlSUzJ0U1ZGTkRSbUp3U3pKVGVYZEliMkZwUW13MWJXRkxWVFJuYzBOdFgyNVdiVVpYVTB0bGJtaFBZV014WlY5YVIwTmZZMDVSVTB4Q04wbHZkR1JIZDFkQmNFVklUMmMyZDNSamRHNUViMjVsWTJoeE9UUXlWbXRhZGpaRlRGUlBkMGcwZEcxd2VsWjFZbGxmUkhOcmN6RmZNamxEUm5GMk4yMUlReTFhYm1kQmFFVkhUV1JxTTJNMmRVczNiR1JqTm1jd1ZYTTNkMlJuZFhnMVpWbFVRVmRJV0RKWmQyUnJNM1F0WjI5Q1UxYzFVbE5aU1hWeFZ6WnBaRWRPYW5OWVlrcEhRVkJxUVd0SVZraE5VM1YxZERGZlJuVmlhM0YzTjFaMVlXOVBRbTAxVm1sWFJsbHRObGhVV0ZKelRVSlhSMGd6VVc5NFlWWnFRemhyVEZObVkzWXljWHBtWTFObGJHaEVUV1JwUkcxUU9HNUlURFJmWjNKblpYSXlNbTVNUTBaVGEyaFFOR1JsYlMwMlQwVkRZa2gyY1cxR1ZFWkpSR1JqWm5oRGJGUlVRV055VVd0R1pVbHNiR0l3VGs1aWJVbElPRlZYUVdwRVdYWnhUV1Z6VUhRMU1WRnRNM2syTlhNMFgybHhjbE53VldvemVqQnFNR1ZYYjJ0eWJrUkNhbkpGTkdKTWFISjZhbTVNU2pSdE5tOTFSMkpFYVhweE5VNUtRMmxtWjNGdVIyeE5VVkZPT1ZCSGNsbE9lamh4U1VobmNUbHFNWFZwVm1wMVpXUjFRVGgxTVVOdGJ6Rk5iMFZaUlcxR01GaGtha1k1UldNMmNsTklheTFQWDBaV09Fd3pjRUZMWDJsd1VrSXlSVEU0WTJaUU9IbzRaV3hzVXpRM1ZUSkZWR1l6ZGpGQlYwdDNlRGR1WnpsSWFtZ3hTWEZTUldGcGNXUktVSGQzUTFob1Rrb3dhVXRhWmpCNVMxSnJRekIzWVZSaFNtZHlZVkUyVkhWZlgwOW5kV1pyUm1oSmVGTkJTVXhHYzJOUmEwSnVOWEpJTlZWS05UVnpia3cxUTNod1NTMDBUSGhLVTNkM1ZYbHBhVEpYTmxKRFRHUk5iakZLU0U1SE4zUklPVWgzUmpGZlQzaHhSMk52ZFhOSFNVbHRlVGR0TjNsTExTMXJWbGhvZVcxRmVWYzBSVFZVTW1wRlpHaEtiVnBpYmxOUldWZEVYM2RUTmkwdE0yWndOMFpVVjJoaGVYQlhSRmxJZG1kcFUxSmpTRE56U2xaMmJHSlNVRXhQVjJSS1RUbEZabGhGWDFSQ1ZsbzNTa2RGTFdGbmJsRXhNMmhaWDBKeE5sOW1UVXhMY1dOa1lWSnNlbVJQYjBKSk5EZzJVUzVMTldwcU1GSlpNRWRyV0V0TFdHUkRSVk42UkRGUi55WmlNdVpwcTBqZTByRW8xWFV4T3ZCbDNMNEdYT0VTcXhpU01kM1FIWGxrIiwiZXhwIjoxNzE5MzI5ODIxLCJpYXQiOjE3MTkzMjk0NjF9.m1g9jLci3oUFx7p49sJG1QQDx_yQ0qa7K-N--6IP3a0\",",
               "    \"callbacks\": [",
               "        {",
               "            \"type\": \"NameCallback\",",
@@ -555,7 +555,7 @@
           },
           "name": "se lee el endpoint y lo headers del excel \"6\"",
           "result": {
-            "duration": 0.08318877220153809,
+            "duration": 0.057008981704711914,
             "status": "passed"
           },
           "step_type": "given"
@@ -574,7 +574,7 @@
           },
           "name": "cuando envio un request al endpoint \"6\"",
           "result": {
-            "duration": 0.623981237411499,
+            "duration": 0.5644068717956543,
             "status": "passed"
           },
           "step_type": "when"
@@ -612,7 +612,7 @@
           },
           "name": "el response debe contener el contenido esperado del excel \"6\"",
           "result": {
-            "duration": 0.029346704483032227,
+            "duration": 0.03079056739807129,
             "status": "passed"
           },
           "step_type": "then"

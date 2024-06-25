@@ -16,10 +16,6 @@
     margin-top: 100px;
 }
 
-/* .content-page > div{
-    width: 90%;
-} */
-
 .navbar-text{
     font-size: 1.5em;
     font-weight: bold;
@@ -164,7 +160,6 @@ margin: 20px;
     height: 100%;
 }
 .card-body .rotate i {
-    /* color: #14141426; */
     position: absolute;
     left: 0;
     left: auto;
