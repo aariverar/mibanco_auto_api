@@ -167,15 +167,17 @@ def create_report_folder(template_folder_path, report_folder_path, source_files)
 
 def sum_durations_and_average_duration(data):
     total_duration = 0
-    step_count = 0
+    scenario_count = 0
     for feature in data:
         for scenario in feature['scenarios']:
-            for step in scenario['steps']:
-                total_duration += step['duration']
-                step_count += 1
-    if step_count == 0:
+            if scenario['status'] != 'skipped':
+                for step in scenario['steps']:
+                    total_duration += step['duration']
+                scenario_count += 1 # ignore scenario skipped
+    if scenario_count == 0:
         return "0s", "0s"
-    average_duration = total_duration / step_count
+    
+    average_duration = total_duration / scenario_count
     total_duration_str = str(round(total_duration, 2)) + "s"
     average_duration_str = str(round(average_duration, 2)) + "s"
 
