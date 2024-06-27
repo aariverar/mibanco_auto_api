@@ -19,7 +19,7 @@ def before_all(context):
     
 
 def after_all(context):
-    data_json_path= os.getcwd()+"\\json.pretty.output"
+    data_json_path= os.path.join(os.getcwd(), "json.pretty.output")
 
     with open(data_json_path, "a") as json_file:
         json_file.write("]") 
@@ -31,13 +31,13 @@ def after_all(context):
     modified_data = modify_json_with_message(data, context.step_messages)
 
     # Sobrescribir el archivo JSON con los cambios
-    data_json_path = os.getcwd()+"\\New.pretty.output"
+    data_json_path = os.path.join(os.getcwd(), "New.pretty.output")
 
     with open(data_json_path, 'w') as file:
         json.dump(modified_data, file, indent=4)
 
     # Generate the HTML report
-    data_json_path= os.getcwd()+"\\New.pretty.output"
+    data_json_path= os.path.join(os.getcwd(), "New.pretty.output")
     data = process_data_json(data_json_path)
     total_scenarios, total_steps, scenarios_information= count_total_scenarios_and_steps(data)
     report_folder = create_report_folder(template_folder_path, report_folder_path, source_files)
