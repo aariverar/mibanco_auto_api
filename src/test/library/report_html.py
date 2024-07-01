@@ -10,3 +10,4 @@ report_folder = create_report_folder(template_folder_path, report_folder_path, s
 
 generate_html_for_all_features(html_features_template, report_folder, data, total_scenarios, total_steps, scenarios_information)
 generate_html_for_each_feature(html_for_each_feature_template, report_folder, data)
+json_to_junit('json.pretty.output', 'output.xml')

@@ -3,6 +3,8 @@ import os
 import shutil
 from datetime import datetime
 from jinja2 import Template
+from xml.etree.ElementTree import Element, SubElement, tostring
+from xml.dom.minidom import parseString
 
 def generate_html_for_all_features(template, output_path, data, scenarios, steps, scenarios_information):
 
@@ -194,3 +196,39 @@ def modify_json_with_message(json_data,step_messages):
                         step['result']['message'] = msg['message']
                         break
     return json_data
+
+def json_to_junit(json_input, xml_output):
+    with open(json_input, 'r') as json_file:
+        data = json.load(json_file)
+
+    testsuites = Element('testsuites')
+    for feature in data:
+        testsuite = SubElement(testsuites, 'testsuite', name=feature['name'], tests=str(len(feature['elements'])))
+        for scenario in feature['elements']:
+            total_duration = 0
+            if scenario['status'] != 'skipped':
+                # Calcular la duración total de los pasos del escenario solo si no está skipped
+                for step in scenario['steps']:
+                    if 'result' in step and step['result']['status'] != 'skipped':
+                        total_duration += step['result']['duration']
+            testcase = SubElement(testsuite, 'testcase', classname=feature['name'], name=scenario['name'], time=str(total_duration))
+            if scenario['status'] == 'skipped':
+                skipped = SubElement(testcase, 'skipped')
+                skipped.text = "Scenario skipped"
+            elif scenario['status'] != 'passed':
+                failure = SubElement(testcase, 'failure', message="Test failed")
+                failure.text = scenario['name']
+            for step in scenario['steps']:
+                if scenario['status'] == 'skipped' or ('result' in step and step['result']['status'] == 'skipped'):
+                    if not 'skipped' in testcase.attrib:
+                        skipped = SubElement(testcase, 'skipped')
+                        skipped.text = "Step skipped"
+                elif 'result' in step and step['result']['status'] != 'passed':
+                    failure = SubElement(testcase, 'failure', message="Step failed")
+                    failure.text = step['name']
+
+    raw_xml = tostring(testsuites, 'utf-8')
+    pretty_xml = parseString(raw_xml).toprettyxml(indent="  ")
+
+    with open(xml_output, 'w') as xml_file:
+        xml_file.write(pretty_xml)

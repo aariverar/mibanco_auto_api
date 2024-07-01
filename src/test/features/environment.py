@@ -44,6 +44,9 @@ def after_all(context):
 
     generate_html_for_all_features(html_features_template, report_folder, data, total_scenarios, total_steps, scenarios_information)
     generate_html_for_each_feature(html_for_each_feature_template, report_folder, data)
+   
+    # Convertir archivo json en formato junit xml para integración con Azure DevOps
+    json_to_junit('json.pretty.output', 'output.xml')
 
 def before_feature(context, feature):
     """
